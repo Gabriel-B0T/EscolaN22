@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.LblBemVindo = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
             this.SspRodape = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.TslNomeUserLogado = new System.Windows.Forms.ToolStripStatusLabel();
@@ -42,19 +42,10 @@
             this.TsiAlterarSenha = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TsiCadastrarAluno = new System.Windows.Forms.ToolStripMenuItem();
+            this.TmrRelogio = new System.Windows.Forms.Timer(this.components);
             this.SspRodape.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // LblBemVindo
-            // 
-            this.LblBemVindo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblBemVindo.Location = new System.Drawing.Point(12, 9);
-            this.LblBemVindo.Name = "LblBemVindo";
-            this.LblBemVindo.Size = new System.Drawing.Size(480, 286);
-            this.LblBemVindo.TabIndex = 0;
-            this.LblBemVindo.Text = "Bem-Vindo!";
-            this.LblBemVindo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SspRodape
             // 
@@ -66,9 +57,9 @@
             this.toolStripStatusLabel3,
             this.TslPerfil,
             this.TslDataHora});
-            this.SspRodape.Location = new System.Drawing.Point(0, 364);
+            this.SspRodape.Location = new System.Drawing.Point(0, 460);
             this.SspRodape.Name = "SspRodape";
-            this.SspRodape.Size = new System.Drawing.Size(556, 22);
+            this.SspRodape.Size = new System.Drawing.Size(1378, 22);
             this.SspRodape.TabIndex = 1;
             this.SspRodape.Text = "statusStrip1";
             // 
@@ -117,7 +108,7 @@
             // TslDataHora
             // 
             this.TslDataHora.Name = "TslDataHora";
-            this.TslDataHora.Size = new System.Drawing.Size(144, 17);
+            this.TslDataHora.Size = new System.Drawing.Size(966, 17);
             this.TslDataHora.Spring = true;
             this.TslDataHora.Text = "15/08/2023 - 21:46";
             this.TslDataHora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -129,7 +120,7 @@
             this.cadastrosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(556, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1378, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -163,14 +154,19 @@
             this.TsiCadastrarAluno.Text = "Aluno";
             this.TsiCadastrarAluno.Click += new System.EventHandler(this.TsiCadastrarAluno_Click);
             // 
+            // TmrRelogio
+            // 
+            this.TmrRelogio.Tick += new System.EventHandler(this.TmrRelogio_Tick);
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 386);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1378, 482);
             this.Controls.Add(this.SspRodape);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.LblBemVindo);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TelaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -186,8 +182,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label LblBemVindo;
         private System.Windows.Forms.StatusStrip SspRodape;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel TslNomeUserLogado;
@@ -201,5 +195,6 @@
         private System.Windows.Forms.ToolStripStatusLabel TslPerfil;
         private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem TsiCadastrarAluno;
+        private System.Windows.Forms.Timer TmrRelogio;
     }
 }

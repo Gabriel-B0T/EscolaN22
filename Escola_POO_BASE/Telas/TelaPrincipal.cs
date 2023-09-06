@@ -58,14 +58,15 @@ namespace Escola_POO_BASE.Telas
             //Caso o obj _userLogado for do tipo Aluno, então armazanerá na 
             //propriedade Text a palavra "aluno", senao, "professor".
             //TslPerfil.Text = _userLogado is Aluno ? "Aluno" : "Professor";
-
-            LblBemVindo.Text = $"Bem vindo {_userLogado.Nome}";
+          
             TslNomeUserLogado.Text = _userLogado.Nome;
             TslEmailUserLogado.Text = _userLogado.Email;
 
             // TODO 2 - Descobrir como mostrar a data e hora completa no toolStrip.
 
             TslDataHora.Text = DateTime.Now.ToString();
+            TmrRelogio.Interval = 1000;
+            TmrRelogio.Enabled = true;
         }
 
         private void TsiAlterarSenha_Click(object sender, EventArgs e)
@@ -77,8 +78,13 @@ namespace Escola_POO_BASE.Telas
         private void TsiCadastrarAluno_Click(object sender, EventArgs e)
         {
             TelaCadastrarAluno telaCadastrarAluno = new TelaCadastrarAluno(_userLogado);
-            telaCadastrarAluno.ShowDialog();
+            telaCadastrarAluno.MdiParent = this;
+            telaCadastrarAluno.Show();
         }
 
+        private void TmrRelogio_Tick(object sender, EventArgs e)
+        {
+            TslDataHora.Text = DateTime.Now.ToLongDateString() + " | " + DateTime.Now.ToLongTimeString();
+        }
     }                   
 }
