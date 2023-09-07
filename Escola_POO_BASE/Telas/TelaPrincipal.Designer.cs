@@ -43,8 +43,16 @@
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TsiCadastrarAluno = new System.Windows.Forms.ToolStripMenuItem();
             this.TmrRelogio = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.LblNumeroAlunoRemovidos = new System.Windows.Forms.Label();
+            this.LblAlunosRemovidos = new System.Windows.Forms.Label();
+            this.LblNumeroAlunosAtivos = new System.Windows.Forms.Label();
+            this.LblAlunosAtivos = new System.Windows.Forms.Label();
+            this.LblQtdEmNumero = new System.Windows.Forms.Label();
+            this.LblQtdAlunos = new System.Windows.Forms.Label();
             this.SspRodape.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // SspRodape
@@ -150,7 +158,7 @@
             // TsiCadastrarAluno
             // 
             this.TsiCadastrarAluno.Name = "TsiCadastrarAluno";
-            this.TsiCadastrarAluno.Size = new System.Drawing.Size(180, 22);
+            this.TsiCadastrarAluno.Size = new System.Drawing.Size(106, 22);
             this.TsiCadastrarAluno.Text = "Aluno";
             this.TsiCadastrarAluno.Click += new System.EventHandler(this.TsiCadastrarAluno_Click);
             // 
@@ -158,12 +166,78 @@
             // 
             this.TmrRelogio.Tick += new System.EventHandler(this.TmrRelogio_Tick);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.LblNumeroAlunoRemovidos);
+            this.panel1.Controls.Add(this.LblAlunosRemovidos);
+            this.panel1.Controls.Add(this.LblNumeroAlunosAtivos);
+            this.panel1.Controls.Add(this.LblAlunosAtivos);
+            this.panel1.Controls.Add(this.LblQtdEmNumero);
+            this.panel1.Controls.Add(this.LblQtdAlunos);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(212, 436);
+            this.panel1.TabIndex = 4;
+            // 
+            // LblNumeroAlunoRemovidos
+            // 
+            this.LblNumeroAlunoRemovidos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.LblNumeroAlunoRemovidos.Location = new System.Drawing.Point(59, 295);
+            this.LblNumeroAlunoRemovidos.Name = "LblNumeroAlunoRemovidos";
+            this.LblNumeroAlunoRemovidos.Size = new System.Drawing.Size(51, 27);
+            this.LblNumeroAlunoRemovidos.TabIndex = 5;
+            // 
+            // LblAlunosRemovidos
+            // 
+            this.LblAlunosRemovidos.AutoSize = true;
+            this.LblAlunosRemovidos.Location = new System.Drawing.Point(42, 269);
+            this.LblAlunosRemovidos.Name = "LblAlunosRemovidos";
+            this.LblAlunosRemovidos.Size = new System.Drawing.Size(93, 13);
+            this.LblAlunosRemovidos.TabIndex = 4;
+            this.LblAlunosRemovidos.Text = "Alunos removidos:";
+            // 
+            // LblNumeroAlunosAtivos
+            // 
+            this.LblNumeroAlunosAtivos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.LblNumeroAlunosAtivos.Location = new System.Drawing.Point(59, 191);
+            this.LblNumeroAlunosAtivos.Name = "LblNumeroAlunosAtivos";
+            this.LblNumeroAlunosAtivos.Size = new System.Drawing.Size(51, 27);
+            this.LblNumeroAlunosAtivos.TabIndex = 3;
+            // 
+            // LblAlunosAtivos
+            // 
+            this.LblAlunosAtivos.AutoSize = true;
+            this.LblAlunosAtivos.Location = new System.Drawing.Point(50, 164);
+            this.LblAlunosAtivos.Name = "LblAlunosAtivos";
+            this.LblAlunosAtivos.Size = new System.Drawing.Size(73, 13);
+            this.LblAlunosAtivos.TabIndex = 2;
+            this.LblAlunosAtivos.Text = "Alunos ativos:";
+            // 
+            // LblQtdEmNumero
+            // 
+            this.LblQtdEmNumero.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.LblQtdEmNumero.Location = new System.Drawing.Point(59, 82);
+            this.LblQtdEmNumero.Name = "LblQtdEmNumero";
+            this.LblQtdEmNumero.Size = new System.Drawing.Size(51, 27);
+            this.LblQtdEmNumero.TabIndex = 1;
+            // 
+            // LblQtdAlunos
+            // 
+            this.LblQtdAlunos.AutoSize = true;
+            this.LblQtdAlunos.Location = new System.Drawing.Point(33, 55);
+            this.LblQtdAlunos.Name = "LblQtdAlunos";
+            this.LblQtdAlunos.Size = new System.Drawing.Size(114, 13);
+            this.LblQtdAlunos.TabIndex = 0;
+            this.LblQtdAlunos.Text = "Quantidade de alunos:";
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1378, 482);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.SspRodape);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -176,6 +250,8 @@
             this.SspRodape.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,5 +272,12 @@
         private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem TsiCadastrarAluno;
         private System.Windows.Forms.Timer TmrRelogio;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label LblQtdAlunos;
+        private System.Windows.Forms.Label LblNumeroAlunoRemovidos;
+        private System.Windows.Forms.Label LblAlunosRemovidos;
+        private System.Windows.Forms.Label LblNumeroAlunosAtivos;
+        private System.Windows.Forms.Label LblAlunosAtivos;
+        private System.Windows.Forms.Label LblQtdEmNumero;
     }
 }

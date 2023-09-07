@@ -20,12 +20,13 @@ namespace Escola_POO_BASE.Telas
     {    
 
         private Usuario _userLogado;
-        //private List<Usuario> _usuarios;
+        private List<Aluno> _alunos;
 
         public TelaPrincipal(Usuario usarioLogado)
         {
             InitializeComponent();
-            _userLogado = usarioLogado;          
+            _userLogado = usarioLogado;
+           
         }
 
 
@@ -67,6 +68,13 @@ namespace Escola_POO_BASE.Telas
             TslDataHora.Text = DateTime.Now.ToString();
             TmrRelogio.Interval = 1000;
             TmrRelogio.Enabled = true;
+
+            _alunos = Usuario.BuscarUsusarios().ConvertAll(a => (Aluno)a);
+
+            LblQtdEmNumero.Text = _alunos.Count.ToString();                      
+            LblNumeroAlunoRemovidos.Text = _alunos.Where(a => a.Ativo == false).Count().ToString();            
+            LblNumeroAlunosAtivos.Text = _alunos.Where(a => a.Ativo == true).Count().ToString();
+
         }
 
         private void TsiAlterarSenha_Click(object sender, EventArgs e)
@@ -85,6 +93,23 @@ namespace Escola_POO_BASE.Telas
         private void TmrRelogio_Tick(object sender, EventArgs e)
         {
             TslDataHora.Text = DateTime.Now.ToLongDateString() + " | " + DateTime.Now.ToLongTimeString();
+
+
+            try
+            {
+                _alunos = Usuario.BuscarUsusarios().ConvertAll(a => (Aluno)a);
+
+                LblQtdEmNumero.Text = _alunos.Count.ToString();
+                LblNumeroAlunoRemovidos.Text = _alunos.Where(a => a.Ativo == false).Count().ToString();
+                LblNumeroAlunosAtivos.Text = _alunos.Where(a => a.Ativo == true).Count().ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+        
+        
     }                   
 }

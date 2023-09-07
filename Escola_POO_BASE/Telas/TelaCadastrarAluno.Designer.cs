@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BtnAlterar = new System.Windows.Forms.Button();
             this.BtnNovo = new System.Windows.Forms.Button();
@@ -48,10 +48,11 @@
             this.TxtNomeAluno = new System.Windows.Forms.TextBox();
             this.DgvUsuarios = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BtnBuscar = new System.Windows.Forms.Button();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.CbbBuscar = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.BtnBuscar = new System.Windows.Forms.Button();
+            this.BtnReativar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsuarios)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -59,6 +60,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BtnReativar);
             this.groupBox1.Controls.Add(this.BtnAlterar);
             this.groupBox1.Controls.Add(this.BtnNovo);
             this.groupBox1.Controls.Add(this.CkbAtivo);
@@ -234,8 +236,8 @@
             this.DgvUsuarios.AllowUserToAddRows = false;
             this.DgvUsuarios.AllowUserToDeleteRows = false;
             this.DgvUsuarios.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DgvUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DgvUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvUsuarios.Location = new System.Drawing.Point(518, 129);
             this.DgvUsuarios.MultiSelect = false;
@@ -261,6 +263,16 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Painel de busca";
+            // 
+            // BtnBuscar
+            // 
+            this.BtnBuscar.Location = new System.Drawing.Point(505, 21);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.BtnBuscar.TabIndex = 3;
+            this.BtnBuscar.Text = "Buscar";
+            this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // TxtBuscar
             // 
@@ -292,15 +304,14 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Buscar por:";
             // 
-            // BtnBuscar
+            // BtnReativar
             // 
-            this.BtnBuscar.Location = new System.Drawing.Point(505, 21);
-            this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.BtnBuscar.TabIndex = 3;
-            this.BtnBuscar.Text = "Buscar";
-            this.BtnBuscar.UseVisualStyleBackColor = true;
-            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            this.BtnReativar.Location = new System.Drawing.Point(243, 310);
+            this.BtnReativar.Name = "BtnReativar";
+            this.BtnReativar.Size = new System.Drawing.Size(75, 23);
+            this.BtnReativar.TabIndex = 20;
+            this.BtnReativar.Text = "Reativar";
+            this.BtnReativar.UseVisualStyleBackColor = true;
             // 
             // TelaCadastrarAluno
             // 
@@ -347,5 +358,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox TxtBuscar;
         private System.Windows.Forms.Button BtnBuscar;
+        private System.Windows.Forms.Button BtnReativar;
     }
 }

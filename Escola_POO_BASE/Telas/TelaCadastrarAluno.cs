@@ -111,6 +111,9 @@ namespace Escola_POO_BASE.Telas
                 if (professor.NivelAcesso != 1)
                 {
                     BtnCadastrar.Enabled = false;
+
+                    BtnReativar.Enabled = false;
+                                    
                     MessageBox.Show("Você não possui permissão para cadastrar", "Erro de Permissão", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
@@ -208,7 +211,16 @@ namespace Escola_POO_BASE.Telas
         {
             try
             {
+                Professor professor = (Professor)_userLogado;
+
+                if(professor.NivelAcesso != 1)
+                {
+                    MessageBox.Show("Você não tem permissão para executar esta ação.");
+                    return;
+                }
+
                 DialogResult dr = MessageBox.Show($"Você deseja remover {_alunoSelecionado.Nome}?", "Remover aluno", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
 
                 if (dr == DialogResult.Yes)
                 {
@@ -236,8 +248,6 @@ namespace Escola_POO_BASE.Telas
             List<Aluno> listaAlunosFiltrada = Aluno.BuscarAluno(_alunos, CbbBuscar.SelectedIndex, TxtBuscar.Text);
 
         }
-
-
 
         //private void DgvUsuarios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         //{
